@@ -1,0 +1,50 @@
+#include <stdio.h>
+
+//Math Solver
+
+//variable declarations
+int choice, choice2;
+float num[];
+
+//function prototype
+double sum(double x[])
+
+int main(){
+   printf("Choose a Category: ");
+   printf("1: Algebra\n");
+   printf("2: Measuration\n");
+   printf("3: Quadratic Equations\n");
+   
+	scanf("%d", &choice);
+     
+	switch(choice){
+		
+		Case '1':
+			printf("You selected Algebra.\n");
+     		printf("Choose an operation: ");
+                printf("1: Sum\t\t");
+                printf("2: Difference\n");
+                printf("3: Multiplication\t\t");
+                printf("4: Division\n");
+
+				scanf("%d", &choice2);
+				
+				if(choice2 == 1){
+				printf("Enter the numbers you want to add: \n");
+				
+				//looking for a better way to do this
+				scanf("%f%f%f%f%f", &num);
+					ans = sum(num);
+				}
+				
+		
+		Case '2':
+			   printf("Choose an Operation: ");
+
+		
+	}
+	//still
+	
+	
+	
+}
