@@ -1,50 +1,92 @@
 #include <stdio.h>
+#include <math.h>
 
-//Math Solver
+//VARIABLE DECLARATION
+ int option;
+ float a, b, c, answer;
 
-//variable declarations
-int choice, choice2;
-float num[];
-
-//function prototype
-double sum(double x[])
+//FUNCTION PROTOTYPE
+float areatriangle(float x, float y);
+float quadeqn(float x, float y, float z);
 
 int main(){
-   printf("Choose a Category: ");
-   printf("1: Algebra\n");
-   printf("2: Measuration\n");
-   printf("3: Quadratic Equations\n");
-   
-	scanf("%d", &choice);
-     
-	switch(choice){
-		
-		Case '1':
-			printf("You selected Algebra.\n");
-     		printf("Choose an operation: ");
-                printf("1: Sum\t\t");
-                printf("2: Difference\n");
-                printf("3: Multiplication\t\t");
-                printf("4: Division\n");
+	
 
-				scanf("%d", &choice2);
-				
-				if(choice2 == 1){
-				printf("Enter the numbers you want to add: \n");
-				
-				//looking for a better way to do this
-				scanf("%f%f%f%f%f", &num);
-					ans = sum(num);
-				}
-				
-		
-		Case '2':
-			   printf("Choose an Operation: ");
+ printf("1) CALCULATE AREA OF A TRIANGE\n");
+ printf("2) CALCULATE THE QUADRATIC EQUATION\n");
+ printf("3) CALCULATE AREA OF A RECTANGLE\n");
+ printf("4) CALCULATE AREA OF A SPHERE\n");
+ printf("5) Exit Program\n\n");
+ printf("Please select an option: ");
+scanf("%d", &option);
 
-		
-	}
-	//still
+
+
+switch(option){
+
+
+case 1:
+printf("what is the height of the triangle: ");
+   scanf("%f", &a);
+printf("what is the base of the triangle: ");
+   scanf("%f", &b);
+answer = areatriangle(a, b);
+ printf("the area of the triangle is: %f", answer);
+break;
+
+
+  case 2:
+  printf("what is the coefficient of x^2: ");
+        scanf("%f", &a);
+  printf("what is the coefficient of the x: ");
+        scanf("%f", &b);
+  printf("what is the constant: ");
+        scanf("%f", &c);
+  answer = quadeqn(a, b, c);
+  printf("the solution to the quadratic equation is x = %f ", answer); 
+break;
+
+
+case 5:
+	return 0;
+	break;
 	
 	
-	
+default:
+	return 0;
+	break;
+
+      }
+
 }
+    
+
+//FUNCTION DECLARATION
+
+float areatriangle(float x, float y) {
+float area = 0.5 * ( x * y);
+   return area;
+   }  
+
+float quadeqn(float x, float y, float z) {
+ float a, b, c, d, e, f;
+    a = (y*y);
+    b =   (4*x*z);
+    c= a - b;
+    d = sqrt(c); 
+    e = (2*x);
+    f = (a + d) /e;
+    return f;
+
+	//float eqn = ((y*y) + sqrt((y*y) - (4*x*z))) / (2*x);
+	//   return eqn;
+}
+
+ 
+	
+
+
+
+
+
+
