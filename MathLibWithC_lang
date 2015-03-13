@@ -6,17 +6,44 @@
  float a, b, c, answer;
 
 //FUNCTION PROTOTYPE
-float areatriangle(float x, float y);
 float quadeqn(float x, float y, float z);
+float exponential(float x);
+float sine(float x);
+float cosine(float x);
+float tangent(float x);
+float hypsine(float x);
+float hypcosine(float x);
+float hyptangent(float x);
+float naturallog(float x);
+//float power(float x, float y);
+
+
+
+float areatriangle(float x, float y);
+float arearectangle(float x, float y);
+float areasphere(float r);
+
+
 
 int main(){
 	
 
- printf("1) CALCULATE AREA OF A TRIANGE\n");
- printf("2) CALCULATE THE QUADRATIC EQUATION\n");
- printf("3) CALCULATE AREA OF A RECTANGLE\n");
- printf("4) CALCULATE AREA OF A SPHERE\n");
- printf("5) Exit Program\n\n");
+
+ printf("1) CALCULATE THE QUADRATIC EQUATION\n");
+ printf("2) CALCULATE THE EXPONENTIAL OF A NUMBER\n");
+ printf("3) CALCULATE THE SINE OF AN ANGLE\n");
+ printf("4) CALCULATE THE COSINE OF AN ANGLE\n");
+ printf("5) CALCULATE THE TANGENT OF AN ANGLE\n");
+ printf("6) CALCULATE THE HYPERBOLIC SINE OF AN ANGLE\n");
+ printf("7) CALCULATE THE HYPERBOLIC COSINE OF AN ANGLE\n");
+ printf("8) CALCULATE THE HYPERBOLIC TANGENT OF AN ANGLE\n");
+ printf("9) CALCULATE THE NATURAL LOGARITHM OF A NUMBER\n");
+ printf("10) CALCULATE THE POWER OF A NUMBER\n");
+ printf("11) CALCULATE AREA OF A TRIANGE\n");
+ printf("12) CALCULATE AREA OF A RECTANGLE\n");
+ printf("13) CALCULATE AREA OF A SPHERE\n");
+ 
+ printf("99) Exit Program\n\n");
  printf("Please select an option: ");
 scanf("%d", &option);
 
@@ -24,36 +51,125 @@ scanf("%d", &option);
 
 switch(option){
 
-
-case 1:
-printf("what is the height of the triangle: ");
-   scanf("%f", &a);
-printf("what is the base of the triangle: ");
-   scanf("%f", &b);
-answer = areatriangle(a, b);
- printf("the area of the triangle is: %f", answer);
-break;
-
-
-  case 2:
-  printf("what is the coefficient of x^2: ");
+ case 1:
+  	 printf("what is the coefficient of x^2: ");
         scanf("%f", &a);
-  printf("what is the coefficient of the x: ");
-        scanf("%f", &b);
-  printf("what is the constant: ");
-        scanf("%f", &c);
-  answer = quadeqn(a, b, c);
-  printf("the solution to the quadratic equation is x = %f ", answer); 
+     printf("what is the coefficient of the x: ");
+         scanf("%f", &b);
+	 printf("what is the constant: ");
+  	      scanf("%f", &c);
+  	      answer = quadeqn(a, b, c);
+     printf("the solution to the quadratic equation is x = %f ", answer); 
 break;
 
+ case 2:
+  	 printf("Enter the number: ");
+        scanf("%f", &a);
+  	      answer = exponential(a);
+     printf("the the exponential of %f is %f", a, answer); 
+break;
+
+ case 3:
+  	 printf("what is the value of the angle: ");
+        scanf("%f", &a);
+  	      answer = sine(a);
+     printf("the sine of the angle is %f ", answer); 
+break;
+
+case 4:
+  	 printf("what is the value of the angle: ");
+        scanf("%f", &a);
+  	      answer = cosine(a);
+     printf("the cosine of the angle is %f ", answer); 
+break;
 
 case 5:
+  	 printf("what is the value of the angle: ");
+        scanf("%f", &a);
+  	      answer = tangent(a);
+     printf("the tangent of the angle is %f ", answer); 
+break;
+
+case 6:
+  	 printf("what is the value of the angle: ");
+        scanf("%f", &a);
+  	      answer = hypsine(a);
+     printf("the hyperbolic sine of the angle is %f ", answer); 
+break;
+
+case 7:
+  	 printf("what is the value of the angle: ");
+        scanf("%f", &a);
+  	      answer = hypcosine(a);
+     printf("the hyperbolic cosine of the angle is %f ", answer); 
+break;
+
+case 8:
+  	 printf("what is the value of the angle: ");
+        scanf("%f", &a);
+  	      answer = hyptangent(a);
+     printf("the hyperbolic tangent of the angle is %f ", answer); 
+break;
+
+case 9:
+  	 printf("Input the number: ");
+        scanf("%f", &a);
+  	      answer = naturallog(a);
+     printf("the natural logarithm of the number is %f ", answer); 
+break;
+
+case 10:
+  	 printf("Input the number: ");
+  	 printf("Input its power: ");
+        scanf("%f%f", &a, &b);
+  	      answer = pow(a, b);
+     printf("the power of the number is %f ", answer); 
+break;
+
+
+	case 11:
+ printf("what is the height of the triangle: ");
+ scanf("%f", &a);
+ printf("what is the base of the triangle: ");
+scanf("%f", &b);
+answer = areatriangle(a, b);
+printf("the area of the triangle is: %f", answer);
+break;
+
+ 
+
+	case 12:
+ printf("what is the length of the rectangle: ");
+ scanf("%f", &a);
+ printf("what is the width of the rectangle: ");
+scanf("%f", &b);
+answer = arearectangle(a, b);
+ printf("the area of the rectangle is: %f", answer);
+break;
+
+
+
+case 13:
+ printf("what is the radius of the sphere: ");
+ scanf("%f", &a);
+answer = areasphere(a);
+ printf("the area of the sphere is: %f", answer);
+break;
+
+
+
+
+
+
+
+
+case 99:
 	return 0;
 	break;
 	
-	
-default:
+ default:
 	return 0;
+	
 	break;
 
       }
@@ -63,30 +179,81 @@ default:
 
 //FUNCTION DECLARATION
 
-float areatriangle(float x, float y) {
-float area = 0.5 * ( x * y);
-   return area;
-   }  
-
-float quadeqn(float x, float y, float z) {
- float a, b, c, d, e, f;
-    a = (y*y);
-    b =   (4*x*z);
-    c= a - b;
-    d = sqrt(c); 
-    e = (2*x);
-    f = (a + d) /e;
-    return f;
-
+		float quadeqn(float x, float y, float z) {
+    float a, b, c, d, e, f;
 	//float eqn = ((y*y) + sqrt((y*y) - (4*x*z))) / (2*x);
+    a = (y*y);
+	b =   (4*x*z);
+	c= a - b;
+	d = sqrt(c);
+	e = (2*x);
+	f = (a + d) /e;
+	return f;
 	//   return eqn;
 }
 
- 
+float exponential(float x){
+	float num = exp(x);
+	return num;
+}
+
+float sine(float x){
+	float num = sin(x);
+	return num;	
+}
+
+float cosine(float x){
+	float num = cos(x);
+	return num;
+}
+
+float tangent(float x){
+	float num = tan(x);
+	return num;
+}
+
+float hypsine(float x){
+	float num = sinh(x);
+	return num;
+}
+
+float hypcosine(float x){
+	float num = cosh(x);
+	return num;
+}
+
+float hyptangent(float x){
+	float num = tanh(x);
+	return num;
+}
+
+float naturallog(float x){
+	float num = log(x);
+	return num;
+}
+
+/*
+float power(float x, float y){
+	int num = x^y;
+	return num;
+}
+
+*/
+
+
+	float areatriangle(float x, float y) {
+	float area = 0.5 * ( x * y);
+   return area;
+}
+
+float arearectangle(float x, float y) {
+	float area = x * y;
+	return area;
+}
+
+float areasphere(float r){
+	float area = ((1.3333) * 3.14159 * (r * r));
+	return area;
+} 
 	
-
-
-
-
-
 
